@@ -2,29 +2,27 @@
 session_start();
 include("config.php");
 
-// Check if the user is logged in
-if (!isset($_SESSION['user_id'])) {
-    // Redirect to the login page or handle the situation appropriately
-    header("Location: login.php");
-    exit();
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $Email = $_POST['email'];
+    $Password = $_POST['password'];
+
+    if (!empty($Email) && !empty($Password)) {
+        $query = "SELECT * FROM journal WHERE email = '$Email' LIMIT 1";
+        $result = mysqli_query($conn, $query);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+
+            if (password_verify($Password, $user_data['password'])) {
+                // Password verification using password_hash()
+                $_SESSION['user_id'] = $user_data['id']; // Assuming 'id' is the user ID column
+                header("location: home.php");
+                die;
+            }
+        }
+    }
+    echo "<script type='text/javascript'> alert('Wrong Email or Password. Please try again.')</script>";
 }
-
-// Assuming you have stored the user ID in the session during login
-$user_id = $_SESSION['user_id'];
-
-// Retrieve user's first name
-$user_query = "SELECT fname FROM journal WHERE id = $user_id";
-$user_result = mysqli_query($conn, $user_query);
-$user_data = mysqli_fetch_assoc($user_result);
-$first_name = $user_data['fname'];
-
-// Retrieve notes for the logged-in user
-$notes_query = "SELECT * FROM notes WHERE user_id = $user_id";
-$notes_result = mysqli_query($conn, $notes_query);
-
-// Retrieve checklists for the logged-in user
-$checklists_query = "SELECT * FROM checklists WHERE user_id = $user_id";
-$checklists_result = mysqli_query($conn, $checklists_query);
 ?>
 
 <!DOCTYPE html>
@@ -36,43 +34,45 @@ $checklists_result = mysqli_query($conn, $checklists_query);
         <title>2-2</title> 
 
         <!-- ---------- CSS FILE LINK ---------- -->
-        <link rel="stylesheet" type="text/css" href="assets/style.css">
+        <link rel="stylesheet" type="text/css" href="assets\style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     </head>
 
-    <body style="background: url(whitebg.jpg);background-size: 100% 100%;" body text="#461959">
+    <body style="background: url('whitebg.jpg'); background-size: 100% 100%; color: #461959;">
         <!---------------------Header--------------------->
         <header class="header">
         <img src="" id="complogo1">
-		<h1 class="logo"><a href="#"><?php echo $first_name; ?>'s Journal</a></h1>
+		<h1 class="logo"><a href="#">ONEiric Diary</a></h1>
           <ul class="main-nav">
             <li><a href="#Home">Home</a></li>
-            <li><a class="logout" href="login.php">Log Out</a></li>
+            <li><a href="#Register">Login</a></li>
           </ul>
 	    </header>
         <!--------------------- H o m e --------------------->
         <div class="wrapper">
             <main>
                 <section class="module parallax parallax-1" id="Home">
-                   
-        <h1>ONEIRIC DIARY</h1>
-        
-           
-	    <div class="button-container">
-	        <a class="button" href="notes.php">Notes</a>
-	        <a class="button" href="checklists.php">Checklists</a>
-	    </div>
-        <footer class="footer">    
-        <p>Developed by Group 6 - PHP Group </p>
-        </footer>
+                    <h1>ONEiric Diary</h1>
                 </section>
-             
+        <!-- -------- REGISTER FORM -------- -->
+        <section class="module parallax parallax-2" id="Register">
+            <div class="form-container">
+            <form action="" method="post"> 
+            <div class="login">
+              <h3>LOGIN</h3>
+              <form method="POST">
+                <input type="email" name="email" required placeholder="enter your email">
+                <input type="password" name="password" required placeholder="enter your password">
+                <input type="submit" name="submit" value="LOGIN" class="form-btn">
+              </form>
+        <p>By clicking the Login button, you agree to our<br>
+        <a href="">Terms and Condition</a> and <a href="a">Policy Privacy</a>
+        </p>
+        <p>Don't have an account yet? <a href="signup.php">Sign-up Here</a></p>
+    </div>
+        </section>        
             </main>
         </div>    
     </body>
 </html>
-<?php
-// Close the database connection
-mysqli_close($conn);
-?>

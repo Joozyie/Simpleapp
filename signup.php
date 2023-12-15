@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "<script type='text/javascript'> alert('Successfully Registered')</script>";
 
             // Redirect to login page after successful registration
-            header("location: login.php");
+            header("location: index.php");
             die;
         } else {
             echo "<script type='text/javascript'> alert('Error in registration.')</script>";
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <p>By clicking the Sign Up button, you agree to our<br>
         <a href="">Terms and Condition</a> and <a href="a">Policy Privacy</a>
         </p>
-        <p>Already have an account? <a href="login.php">Login Here</a></p>
+        <p>Already have an account? <a href="index.php">Login Here</a></p>
     </div>
     </div>
         </section>        

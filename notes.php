@@ -29,7 +29,7 @@ include("config.php")
                 <a class="nav-link" href="" data-toggle="modal" data-target="#addNoteModal">Add Note</a>
             </div>
             <div class="navbar-nav ml-auto">
-                <a href="index.php" class="nav-link">Home</a>
+                <a href="home.php" class="nav-link">Home</a>
                 <a href="checklists.php" class="nav-link">Checklists</a>
             </div>
         </div>
