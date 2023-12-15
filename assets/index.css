@@ -6,14 +6,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     min-height: 100vh;
     margin: 0;
+    font-size: 20px; /* Adjust the base font size */
 }
 
 .header {
     width: 100%;
-    padding: 10px;
+    padding: 20px; /* Increased padding */
     box-sizing: border-box;
     background-color: rgba(241, 241, 241, 0.8);
     display: flex;
@@ -23,17 +24,17 @@ body {
 
 h1 {
     margin: 0;
+    font-size: 40px; /* Adjusted font size */
 }
 
 form {
-    margin-right: 15px;
+    margin-right: 20px; /* Increased margin */
 }
 
 .logout {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 20px;
-
+    font-size: 24px; /* Adjusted font size */
 }
 
 .logout:hover {
@@ -49,14 +50,14 @@ form {
 }
 
 .button {
-    width: 200px;
-    margin: 20px;
-    padding: 25px;
+    width: 250px; /* Increased width */
+    margin: 30px; /* Increased margin */
+    padding: 30px; /* Increased padding */
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 18px;
-    border-radius: 6px;
+    font-size: 24px; /* Adjusted font size */
+    border-radius: 10px; /* Increased border radius */
     transition: background 0.3s;
 }
 
@@ -66,7 +67,8 @@ form {
 
 .footer {
     background-color: rgba(241, 241, 241, 0.8);
-    padding: 10px;
-    text-align: left;
+    padding: 20px; /* Increased padding */
+    text-align: center;
     width: 100%;
+    font-size: 18px; /* Adjusted font size */
 }
