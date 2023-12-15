@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@500&display=swap');
+
+/* ============================================================
+  REFERENCING EVERY HTML TAGS
+============================================================ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+    scroll-behavior: smooth;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.heading{
+   margin-bottom: 3rem;
+   text-align: center;
+}
+
+.heading span{
+   text-transform: uppercase;
+   font-size: 6.5rem;
+   border-bottom: var(--border-bold);
+}
+.heading span{
+      font-size: 4rem;
+   }
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*----------BOX SIZING & CLEARFIX----------*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*----------PRIMARY STRUCTURE----------*/
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  display: block;
+  background-color: #e7ebf1;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5%;
+}
+/*----------SECTIONS----------*/
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: 'Caveat';
+  font-size: 30px;
+}
+section.module h3 {
+  margin-bottom: 40px;
+  font-family: 'Caveat';
+  font-size: 30px;
+  color: #000;
+  text-align:center;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 900px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+section.module.parallax h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 80px;
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("https://i.pinimg.com/originals/e8/62/be/e862be9ae0917a91b36c6ef3236e0508.gif");
+}
+
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+}
+/*----------------------FOR THE BODY------------------------------*/
+
+@font-face {
+  font-family: 'Caveat';
+  src: url('ProximaNova-Regular.otf');
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('Proxima Nova Thin.otf');
+}
+body {
+  background-color: #eec299;
+  font-family: 'Caveat';
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header h2, h3, a {
+  color: rgb(0, 0, 0);
+  font-family: 'Caveat', cursive;
+}
+
+.header a {
+  text-decoration: none;
+}
+.header{
+  top:0px;
+  width:100%;
+  position: sticky;
+  display: flex;
+  z-index: 999;
+  font-family: 'Caveat', cursive;
+}
+
+.logo {
+  position: fixed;
+  left: 10px;
+  margin: 0;
+  font-size: 20px;
+}
+
+.main-nav {
+  margin-top: 5px;
+  font-family: 'Caveat', cursive;
+
+}
+.logo a, .main-nav a {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+.main-nav a {
+  text-transform: uppercase;
+}
+
+.main-nav a {
+  color: #000000;
+  font-size: 16px;
+}
+
+.main-nav a:hover {
+  color: #545557;
+}
+
+.header {
+  border: 1px solid #000000;
+  background-color: rgba(241, 241, 241, 0.5);
+  -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+}
+
+/* ================================= 
+  Media Queries //KUNG MAY NAKA RED LINE WAG MO NA LANG PANSININ NORMAL YAN HAHAHAHA
+==================================== */
+
+@media (min-width: 769px) {
+  .header,
+  .main-nav {
+    display: flex;
+  }
+  .header {
+    flex-direction: column;
+    align-items: left;
+      .header{
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1150px;
+  }
+  }
+
+}
+
+@media (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+}
+/*----------------------------*/
+.container {
+    position: relative;
+    width: 100%;
+ }
+
+
+.nice-textbox{
+  font-family: sans-serif;
+  float:right;
+  width: 500px;
+  height:200px;
+  margin-top: 50px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #a0a0a0;
+  outline: none;
+}
+
+/*----------------REGISTER-------------*/
+
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:40px;
+    padding-bottom: 10px;
+ }
+ 
+ .container .content{
+    text-align: center;
+ }
+ 
+ .container .content h3{
+    font-size: 30px;
+    color:#333;
+ }
+ 
+ .container .content h3 span{
+    background: crimson;
+    color:#fff;
+    border-radius: 5px;
+    padding:0 15px;
+ }
+ 
+ .container .content h1{
+    font-size: 50px;
+    color:#333;
+ }
+ 
+ .container .content h1 span{
+    color:crimson;
+ }
+ 
+ .container .content p{
+    font-size: 25px;
+    margin-bottom: 20px;
+ }
+ 
+ .container .content .btn{
+    display: inline-block;
+    padding:10px 30px;
+    font-size: 20px;
+    background: rgb(255, 255, 255);
+    color:#fff;
+    margin:0 5px;
+    text-transform: capitalize;
+ }
+ 
+ .container .content .btn:hover{
+    background: crimson;
+ }
+ 
+.form-container{
+     min-height: 100vh;
+     display: flex;
+     align-items: right;
+     justify-content: right;
+     padding: 10px;
+     padding-bottom: 10px;
+     background: #eee;
+}
+
+.form-container form{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    background: #fff;
+    text-align: center;
+    width: 500px;
+}
+
+.form-container form h3{
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    color: #333;
+}
+
+.form-container form input,
+.form-container form select{
+   width: 100%;
+   padding:15px 15px;
+   font-size: 17px;
+   margin:15px 0;
+   background: #eee;
+   border-radius: 30px;
+}
+
+.form-container form select option{
+   background: #fff;
+}
+
+.form-container form .form-btn{
+    background: #757575;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-container form .form-btn:hover{
+    background: #5e5e5e;
+    color: #fff;
+}
+
+.form-container form .form-btn1{
+    background: #cf3e3e;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.button{
+    background: #ffffff;
+    width: 25%;
+    height: 30px;
+    padding: 40px;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 90%;
+}
+
+.form-container form .form-btn1:hover{
+    background: #5e5e5e;
+    color: #fff;
+    text-align: center;
+}
+
+.form-container form p{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.form-container form p a{
+    color: cornflowerblue;
+}
+
+.form-container form .error-msg{
+    margin: 10px 0;
+    display: block;
+    background: #dd5c5c;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+form input {
+    width: 15%;
+    align-items: center;
+    font-size: larger;
+    text-align: center;
+    display: list-item;
+    padding: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    width: 50%;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    align-items: center;
+}
+
+input[type="submit"]:hover {
+    background: rgb(50, 50, 50);
+}
+
+/*----------------FOOTER-------------*/
+ .footer {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 3em 1em;
+  font-size: 5px;
+  font-family: 'Caveat', cursive;
+}
+
+.footer > * {
+  flex:  1 100%;
+}
+
+.footer__addr {
+  margin-right: 1.25em;
+  margin-bottom: 1em;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.button {
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-size: 20px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: rgb(65, 65, 57);
+}
+

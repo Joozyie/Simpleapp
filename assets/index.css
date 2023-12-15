@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@500&display=swap');
+
+body {
+    background: url(whitebg.jpg);
+    font-family: 'Caveat';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(241, 241, 241, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+form {
+    margin-right: 15px;
+}
+
+.logout {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+
+}
+
+.logout:hover {
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.button {
+    width: 200px;
+    margin: 20px;
+    padding: 25px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: rgb(65, 65, 57);
+}
+
+.footer {
+    background-color: rgba(241, 241, 241, 0.8);
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
